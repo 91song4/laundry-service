@@ -19,8 +19,8 @@ module.exports = {
         allowNull: true,
         defaultValue: null,
         references: {
-          model: 'users_providers',
-          key: 'provider_id'
+          model: 'users',
+          key: 'user_id'
         },
         onUpdate: 'cascade',
         onDelete: 'cascade'
