@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'twayair';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayair.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.page_logo {
+  text-align: center;
+}
+
+.content {
+  font-family: twayair;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #3B3E41;
+}
+
+li {
+  list-style: none;
+  margin: 20px 0px;
+}
