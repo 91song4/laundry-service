@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       models.request_status.belongsTo(models.service_request, { foreignKey: "request_id" });
-      models.request_status.belongsTo(models.users_provider, { foreignKey: "provider_id" });
+      models.request_status.belongsTo(models.user, { foreignKey: "provider_id" });
     }
   }
   request_status.init({
@@ -24,6 +24,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'request_status',
+    timestamps: false,
   });
   return request_status;
 };

@@ -9,12 +9,12 @@ module.exports = {
         primaryKey: true,
         autoIncrement: true,
       },
-      customer_id: {
+      user_id: {
         type: Sequelize.BIGINT,
         allowNull: false,
         references: {
-          model: 'users_customers',
-          key: 'customer_id'
+          model: 'users',
+          key: 'user_id'
         },
         onUpdate: 'cascade',
         onDelete: 'cascade'
