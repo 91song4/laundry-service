@@ -13,8 +13,8 @@ module.exports = {
         type: Sequelize.BIGINT,
         allowNull: false,
         references: {
-          model: 'users_customers',
-          key: 'customer_id',
+          model: 'users',
+          key: 'user_id',
         },
         onUpdate: 'cascade',
         onDelete: 'cascade',
@@ -23,8 +23,8 @@ module.exports = {
         type: Sequelize.BIGINT,
         allowNull: false,
         references: {
-          model: 'users_providers',
-          key: 'provider_id',
+          model: 'users',
+          key: 'user_id',
         },
         onUpdate: 'cascade',
         onDelete: 'cascade',

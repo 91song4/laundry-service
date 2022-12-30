@@ -4,13 +4,8 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class service_request extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate(models) {
-      models.service_request.belongsTo(models.users_customer, { foreignKey: "customer_id" });
+      models.service_request.belongsTo(models.user, { foreignKey: "user_id" });
       models.service_request.hasMany(models.request_status, { foreignKey: "request_id" });
     }
   }
@@ -19,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BIGINT,
       primaryKey:true,
     },
-    customer_id: DataTypes.BIGINT,
+    user_id: DataTypes.BIGINT,
     name: DataTypes.STRING,
     phone: DataTypes.STRING,
     address: DataTypes.STRING,
@@ -28,6 +23,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'service_request',
+    timestamps: false,
   });
   return service_request;
 };
