@@ -1,7 +1,6 @@
 {
   "name": "laundry-service",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,5 +22,6 @@
     "sequelize": "^6.28.0",
     "sequelize-cli": "^6.5.2",
     "socketio": "^1.0.0"
-  }
+  },
+  "description": ""
 }
