@@ -30,7 +30,7 @@ a {
   text-shadow: 1px 1px 1px gray;
   color: #FCFAEE;
   display: flex;
-  padding-left: 100px;
+  
 }
 
 .navbar_logo i {
@@ -42,7 +42,7 @@ a {
   display: flex;
   list-style: none;
   padding-left: 0;
-  padding-right: 160px;
+
   font-size: 1.5rem;
   font-weight: bold;
   text-shadow: 1px 1px 1px gray;
@@ -55,6 +55,24 @@ a {
 
 .navbar_menu li:hover {
   background-color: #8FD3FD;
+  border-radius: 4px;
+}
+
+.navbar_button button {
+  font-family: Cafe24SsurroundAir;
+  font-size: 1.1rem;
+  background-color: rgba(0, 0, 0, 0);
+  text-shadow: 1px 1px 1px gray;
+  color: #c5c3be;
+  border: solid lightblue;
+  border-style: dotted;
+  border-radius: 3px;
+  margin-top: 40px;
+}
+
+.navbar_button button:hover {
+  background-color: #8FD3FD;
+  color: #FBFCF8;
   border-radius: 4px;
 }
 
