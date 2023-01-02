@@ -1,12 +1,13 @@
 const express = require('express');
+const cookieParser = require('cookie-parser');
 const { createServer } = require('http');
 const router = require('./routes/index.js');
-
+require('dotenv').config();
 
 const app = express();
 const httpServer = createServer(app);
 
-app.use(express.json());
+app.use(express.json(), cookieParser());
 app.use('/api', router);
 
 app.use(express.static("./assets/templates"));

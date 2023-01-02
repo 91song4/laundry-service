@@ -34,7 +34,14 @@ class UserRepository {
 
   findUser = async (email) => {
     console.log('로그인 레파짓토리 진입');
+    console.log(email);
     const createUserData = await this.UserModel.findOne({ raw: true, where: { email } });
+    console.log(createUserData);
+    return createUserData;
+  }
+
+  findId = async (userId) => {
+    const createUserData = await this.UserModel.findByPk(userId);
     return createUserData;
   }
 }
