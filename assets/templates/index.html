@@ -7,26 +7,83 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- favicon -->
-  <link rel="icon" type="image/png" sizes="16x16" href="..\static\index-static\images\icons8-laundry-kiranshastry-gradient-16.png">
+  <link rel="icon" type="image/png" sizes="16x16"
+    href="..\static\index-static\images\icons8-laundry-kiranshastry-gradient-16.png">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
   <!-- index -->
   <link rel="stylesheet" href="..\static\index-static\styles\index.css" />
   <script defer src="..\static\index-static\js\index.js"></script>
-  <script src="https://kit.fontawesome.com/1bf0af30eb.js" crossorigin="anonymous"></script> 
+  <script src="https://kit.fontawesome.com/1bf0af30eb.js" crossorigin="anonymous"></script>
 
-  
+  <!-- login/signup -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="./modal.js" defer></script>
+
 
   <title>알잘딱깔세</title>
+  <style>
+    #modal.modal-overlay {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.25);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(1.5px);
+      -webkit-backdrop-filter: blur(1.5px);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    #modal .modal-window {
+      background: rgba(69, 139, 197, 0.70);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(13.5px);
+      -webkit-backdrop-filter: blur(13.5px);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      width: 400px;
+      height: 500px;
+      position: relative;
+      top: -100px;
+      padding: 10px;
+    }
+
+    #modal .title h2 {
+      display: inline;
+    }
+
+    #modal .close-area {
+      display: inline;
+      float: right;
+      padding-right: 10px;
+      cursor: pointer;
+      text-shadow: 1px 1px 2px gray;
+      color: white;
+    }
+
+    #modal .content {
+      margin-top: 20px;
+      padding: 0px 10px;
+      text-shadow: 1px 1px 2px gray;
+      color: white;
+    }
+  </style>
 </head>
 
 <body>
   <nav class="navbar">
 
     <div class="navbar_logo">
-     
-      <a href="/">알잘딱깔세</a> 
+
+      <a href="/">알잘딱깔세</a>
       <i class="fa-solid fa-soap"></i>
 
 
@@ -40,17 +97,23 @@
     </ul>
 
     <div class="navbar_button">
-      <button>로그인</button>
-      <button onclick="location.href='/sign_in'">회원가입</button>
+      <button id="login-btn">로그인</button>
+      <button id="signup-btn">회원가입</button>
     </div>
-
 
   </nav>
 
-      <div>내용이 들어갑니다.</div>
-
-
+  <div id="modal" class="modal-overlay">
+    <div class="modal-window">
+      <div class="close-area" id="modal-close-btn">X</div>
+      <div class="content" id="modal-content"></div>
     </div>
+  </div>
+
+  <div>내용이 들어갑니다.</div>
+
+
+  </div>
 
   </div>
 
