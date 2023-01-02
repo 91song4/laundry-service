@@ -1,13 +1,15 @@
 const express = require('express');
+const { createServer } = require('http');
+const router = require('./routes/index.js');
+
+
 const app = express();
-const port = 3000;
+const httpServer = createServer(app);
 
-// app.get('/', (req, res) => {
-//   res.send('Hello World!');
-// });
+app.use(express.json());
+app.use('/api', router);
 
-app.use(express.static('./assets'))
+app.use(express.static("./assets/templates"));
+app.use(express.static("assets"));
 
-app.listen(port, () => {
-  console.log(port, '포트로 서버가 열렸어요!');
-});
+module.exports = httpServer;
