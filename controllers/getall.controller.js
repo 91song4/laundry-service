@@ -16,10 +16,14 @@ class GetallController{
     };
 
     updateRequireStatus = async(req,res,next)=>{
-        const {provider_id} = req.params;
-        const {current_status} = req.body;
+        //빨래번호받아와
+        const {request_id} = req.params;
+        //수정하려는 사람id, 수정하려는 상태
+        const {provider_id,current_status} = req.body;
+        console.log('controller확인',request_id,provider_id,current_status);
+        console.log(typeof(request_id),typeof(provider_id),typeof(current_status));
 
-        const updateRequireStatus = await this.getallService.updateRequireStatus(provider_id,current_status);
+        const updateRequireStatus = await this.getallService.updateRequireStatus(request_id,provider_id,current_status);
 
         res.status(200).json({data:updateRequireStatus});
     };

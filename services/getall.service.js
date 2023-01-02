@@ -22,27 +22,28 @@ class GetallService{
         });
     };
     
-    findRequireStatus = async(provider_id)=>{
-        const findRequire = await this.getallRepository.findRequireStatus(provider_id);
+    // findRequireStatus = async(provider_id)=>{
+    //     const findRequire = await this.getallRepository.findRequireStatus(provider_id);
 
-        return{
-            request_id:findRequire.request_id,
-            current_status:findRequire.current_status,
-            updated_At:findRequire.updated_At,
-        };
-    };
+    //     return{
+    //         request_id:findRequire.request_id,
+    //         current_status:findRequire.current_status,
+    //         updated_At:findRequire.updated_At,
+    //     };
+    // };
 
     //수거완료->배송중->배송완료 로 업데이트 가능
     //배송완료 user point +10,000
-    updateRequireStatus = async(current_status, provider_id)=>{
-        const findRequire = await this.getallRepository.findRequireStatus(provider_id);
+    updateRequireStatus = async(request_id,provider_id,current_status)=>{
+        console.log("service옴",request_id,current_status,provider_id);
+        const findRequire = await this.getallRepository.updateStatus(request_id,provider_id,current_status);
         if(!findRequire) throw new Error("받은 요청이 없음");
         //대기중(1)-수거중(2)-수거완료(3)-배송중(4)-배송완료(5)
         if(current_status <3) throw new Error("권한없음");
         
         //if(current_status === 5){};
 
-        await this.getallRepository.updateRequireStatus(current_status, provider_id);
+        //await this.getallRepository.updateStatus(current_status, provider_id);
 
         return {
             request_id:findRequire.request_id,
