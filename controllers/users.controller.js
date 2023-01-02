@@ -1,5 +1,4 @@
 const crypto = require('crypto');
-require('dotenv').config();
 
 const UserService = require('../services/users.service.js');
 
