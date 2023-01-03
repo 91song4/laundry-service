@@ -7,16 +7,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- favicon -->
-  <link rel="icon" type="image/png" sizes="16x16" href="..\static\index-static\images\icons8-laundry-kiranshastry-gradient-16.png">
+  <link rel="icon" type="image/png" sizes="16x16"
+    href="..\static\index-static\images\icons8-laundry-kiranshastry-gradient-16.png">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
   <!-- index -->
   <link rel="stylesheet" href="..\static\index-static\styles\index.css" />
   <script defer src="..\static\index-static\js\index.js"></script>
-  <script src="https://kit.fontawesome.com/1bf0af30eb.js" crossorigin="anonymous"></script> 
+  <script src="https://kit.fontawesome.com/1bf0af30eb.js" crossorigin="anonymous"></script>
 
-  
+  <!-- login/signup -->
+  <link rel="stylesheet" href="../static/index-static/styles/modal.css" />
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="./modal.js" defer></script>
+
 
   <title>알잘딱깔세</title>
 </head>
@@ -25,8 +30,8 @@
   <nav class="navbar">
 
     <div class="navbar_logo">
-     
-      <a href="/">알잘딱깔세</a> 
+
+      <a href="/">알잘딱깔세</a>
       <i class="fa-solid fa-soap"></i>
 
 
@@ -40,10 +45,9 @@
     </ul>
 
     <div class="navbar_button">
-      <button>로그인</button>
-      <button onclick="location.href='/sign_in'">회원가입</button>
+      <button id="login-btn">로그인</button>
+      <button id="signup-btn">회원가입</button>
     </div>
-
 
   </nav>
 
@@ -54,6 +58,15 @@
         <button class="status_btn" type="button"><img src="..\static\index-static\images\laundry_washing_machine_clothes_clean_wash_icon_196839.png">
           <p>조회하기</p>
         </button>
+  <div id="modal" class="modal-overlay">
+    <div class="modal-window">
+      <div class="close-area" id="modal-close-btn">X</div>
+      <div class="content" id="modal-content"></div>
+    </div>
+  </div>
+
+  <div>내용이 들어갑니다.</div>
+
 
       </div>
 

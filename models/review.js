@@ -20,9 +20,9 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
     },
     customer_id: DataTypes.STRING,
-    provider_id: DataTypes.STRING,    
-    star: DataTypes.BIGINT,
-    review: DataTypes.TEXT,
+    provider_id: DataTypes.STRING,
+    star: DataTypes.INTEGER,
+    review: DataTypes.STRING,
     photo: DataTypes.BLOB
   }, {
     sequelize,
