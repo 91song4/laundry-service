@@ -8,21 +8,40 @@ const modal_content = document.querySelector('#modal-content');
 
 signup_btn.addEventListener('click', (event) => {
   modalOn();
-  const temp_html = '\
-                      <p>email<input class="signForm" type="text"></p>\
-                      <p>nickname<input class="signForm" type="text"></p>\
-                      <p>phone<input class="signForm" type="text"></p>\
-                      <p>address<input class="signForm" type="text"></p>\
-                      <p>pw<input class="signForm" type="password"></p>\
-                      <p>confirm<input class="signForm" type="password"></p>\
-                      <p>userType<input class="signForm" type="password"></p>\
-                    ';
+  const temp_html = `<div class="signin_form">
+                       <div class="sign_email">
+                          <input id="signForm"  placeholder="이메일" type="text">\
+                       </div> 
+                       <div class="sign_nick">
+                          <input id="signForm"  placeholder="닉네임" type="text">\
+                       </div>
+                       <div class="sign_phone">
+                          <input id="signForm"  placeholder="전화번호" type="text">\
+                       </div>
+                       <div class="sign_address">
+                          <input id="signForm"  placeholder="주소" type="text">\
+                       </div>
+                       <div class="sign_pwd">
+                          <input id="signForm"  placeholder="비밀번호" type="password">\
+                       </div>
+                       <div class="sign_repwd">
+                          <input id="signForm"  placeholder="비밀번호 확인" type="password">\
+                       </div>
+                       <div class="sign_usertype">
+                          <select class="form-select" aria-label="Default select example">                   
+                          <option selected value="0">사장님</option>
+                          <option value="1">고객</option>\
+                          </select>
+                       </div>                                        
+                    `;
 
   modal_content.innerHTML = temp_html;
 
   const new_signup_btn = document.createElement('button');
+  new_signup_btn.setAttribute('id', 'signin_btn')
   new_signup_btn.textContent = '회원가입';
-  modal_content.appendChild(new_signup_btn);
+  document.querySelector('.signin_form').appendChild(new_signup_btn);
+ 
 
   new_signup_btn.addEventListener('click', async () => {
     const [email, name, phone, address, pw, confirm, userType] = document.querySelectorAll('.signForm');
@@ -45,15 +64,21 @@ signup_btn.addEventListener('click', (event) => {
 
 login_btn.addEventListener('click', (event) => {
   modalOn();
-  const temp_html = `
-                      <p>email<input class="signForm" type="text"></p>\
-                      <p>pw<input class="signForm" type="password"></p>\
+  const temp_html = `<div class="login_form">
+                      <div class="email_form">
+                       <input placeholder="이메일" id="signForm" class="form-control" type="text">\
+                      </div>
+                      <div class="pw_form">
+                        <input placeholder="비밀번호" id="signForm" class="form-control" type="password">\
+                      </div> 
+                     </div>
                     `;
   modal_content.innerHTML = temp_html;
 
   const new_login_btn = document.createElement('button');
+  new_login_btn.setAttribute('id', 'login_btn')
   new_login_btn.textContent = '로그인';
-  modal_content.appendChild(new_login_btn);
+  document.querySelector('.login_form').appendChild(new_login_btn);
 
   new_login_btn.addEventListener('click', async () => {
     const [email, pw] = document.querySelectorAll('.signForm');
