@@ -10,22 +10,22 @@ signup_btn.addEventListener('click', (event) => {
   modalOn();
   const temp_html = `<div class="signin_form">
                        <div class="sign_email">
-                          <input id="signForm"  placeholder="이메일" type="text">\
+                          <input class="signForm"  placeholder="이메일" type="text">\
                        </div> 
                        <div class="sign_nick">
-                          <input id="signForm"  placeholder="닉네임" type="text">\
+                          <input class="signForm"  placeholder="닉네임" type="text">\
                        </div>
                        <div class="sign_phone">
-                          <input id="signForm"  placeholder="전화번호" type="text">\
+                          <input class="signForm"  placeholder="전화번호" type="text">\
                        </div>
                        <div class="sign_address">
-                          <input id="signForm"  placeholder="주소" type="text">\
+                          <input class="signForm"  placeholder="주소" type="text">\
                        </div>
                        <div class="sign_pwd">
-                          <input id="signForm"  placeholder="비밀번호" type="password">\
+                          <input class="signForm"  placeholder="비밀번호" type="password">\
                        </div>
                        <div class="sign_repwd">
-                          <input id="signForm"  placeholder="비밀번호 확인" type="password">\
+                          <input class="signForm"  placeholder="비밀번호 확인" type="password">\
                        </div>
                        <div class="sign_usertype">
                           <select class="form-select" aria-label="Default select example">                   
@@ -66,10 +66,10 @@ login_btn.addEventListener('click', (event) => {
   modalOn();
   const temp_html = `<div class="login_form">
                       <div class="email_form">
-                       <input placeholder="이메일" id="signForm" class="form-control" type="text">\
+                       <input placeholder="이메일" class="signForm"  type="text">\
                       </div>
                       <div class="pw_form">
-                        <input placeholder="비밀번호" id="signForm" class="form-control" type="password">\
+                        <input placeholder="비밀번호" class="signForm"  type="password">\
                       </div> 
                      </div>
                     `;
