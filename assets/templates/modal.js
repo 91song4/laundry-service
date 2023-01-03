@@ -61,7 +61,7 @@ login_btn.addEventListener('click', (event) => {
       email: email.value,
       pw: pw.value,
     }).then((response) => {
-      window.location.href = 'https://google.com';
+      window.location.href = './main.login.html';
     }).catch((error) => {
       alert(error.request.response);
     })
