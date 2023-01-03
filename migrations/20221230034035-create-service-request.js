@@ -20,15 +20,15 @@ module.exports = {
         onDelete: 'cascade'
       },
       name: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(20),
         allowNull: false,
       },
       phone: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(20),
         allowNull: false,
       },
       address: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(50),
         allowNull: false,
       },
       photo: {
@@ -36,7 +36,7 @@ module.exports = {
         allowNull: false,
       },
       request_details: {
-        type: Sequelize.TEXT,
+        type: Sequelize.STRING(50),
         allowNull: false,
       },
       created_At: {
