@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     phone: DataTypes.STRING,
     address: DataTypes.STRING,
     photo: DataTypes.BLOB,
-    request_details: DataTypes.TEXT
+    request_details: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'service_request',

@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey:true
     },
     provider_id: DataTypes.BIGINT,
-    current_status: DataTypes.BIGINT
+    current_status: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'request_status',

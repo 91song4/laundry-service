@@ -10,7 +10,7 @@ module.exports = {
         autoIncrement: true,
       },
       email: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(30),
         allowNull: false,
         unique: true,
       },
@@ -19,26 +19,25 @@ module.exports = {
         allowNull: false,
       },
       name: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(20),
         allowNull: false,
         unique: true,
       },
       phone: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(20),
         allowNull: false,
         unique: true,
       },
       address: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(50),
         allowNull: false,
       },
       point: {
         type: Sequelize.BIGINT,
         allowNull: false,
-        defaultValue: 10000,
       },
       user_type: {
-        type: Sequelize.BIGINT,
+        type: Sequelize.INTEGER,
         allowNull: false,
       },
       created_At: {

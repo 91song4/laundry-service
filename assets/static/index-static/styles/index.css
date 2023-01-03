@@ -5,6 +5,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'twayair';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayair.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   background-color: #FBFCF8;
@@ -76,6 +83,167 @@ a {
   border-radius: 4px;
 }
 
+.signin_form {
+  text-align: center;
+  justify-content: center; 
+  align-items: center;
+  padding-top: 10%;
+}
+
+.sign_email input {
+  border: none;
+  height: 30px;
+  width: 80%;
+  text-align: center;
+  font-family: Cafe24SsurroundAir;
+  font-size: 1rem;
+}
+
+.sign_nick {
+  margin-top: 5%;
+}
+
+.sign_nick input {
+  border: none;
+  height: 30px;
+  width: 80%;
+  text-align: center;
+  font-family: Cafe24SsurroundAir;
+  font-size: 1rem;
+}
+
+.sign_phone {
+  margin-top: 5%;
+}
+
+.sign_phone input {
+  border: none;
+  height: 30px;
+  width: 80%;
+  text-align: center;
+  font-family: Cafe24SsurroundAir;
+  font-size: 1rem;
+}
+
+.sign_address {
+  margin-top: 5%;
+}
+
+.sign_address input {
+  border: none;
+  height: 30px;
+  width: 80%;
+  text-align: center;
+  font-family: Cafe24SsurroundAir;
+  font-size: 1rem;
+}
+
+.sign_pwd {
+  margin-top: 5%;
+}
+
+.sign_pwd input {
+  border: none;
+  height: 30px;
+  width: 80%;
+  text-align: center;
+  font-family: Cafe24SsurroundAir;
+  font-size: 1rem;
+}
+
+.sign_repwd {
+  margin-top: 5%;
+}
+
+.sign_repwd input {
+  border: none;
+  height: 30px;
+  width: 80%;
+  text-align: center;
+  font-family: Cafe24SsurroundAir;
+  font-size: 1rem;
+}
+
+.sign_usertype {
+  margin-top: 5%;
+  margin-bottom: 10%;
+}
+
+.sign_usertype select {
+  border: none;
+  height: 30px;
+  width: 80%;
+  text-align: center;
+  font-family: Cafe24SsurroundAir;
+  font-size: 1rem;
+}
+
+#signin_btn {
+  width: 30%;
+  height: 40px;
+  justify-content: center;
+  border: none;
+  border-radius: 4px;
+  background-color:#FBFCF8;
+  font-family: twayair;
+  font-size: 1.1rem;
+}
+
+#signin_btn:hover {
+  background-color: #55999A;
+  color: #FCFAEE;
+}
+
+.login_form {
+  text-align: center;
+  justify-content: center; 
+  align-items: center;
+  padding-top: 10%;
+}
+
+.email_form {
+  margin-top: 10%;
+}
+
+.email_form input {
+  border: none;
+  height: 30px;
+  width: 80%;
+  text-align: center;
+  font-family: Cafe24SsurroundAir;
+  font-size: 1rem;
+}
+
+.pw_form {
+  margin-top: 5%;
+  margin-bottom: 10%;
+}
+
+.pw_form input {
+  border: none;
+  height: 30px;
+  width: 80%;
+  text-align: center;
+  font-family: Cafe24SsurroundAir;
+  font-size: 1rem;
+}
+
+#login_btn {
+  width: 30%;
+  height: 40px;
+  justify-content: center;
+  border: none;
+  border-radius: 4px;
+  background-color:#FBFCF8;
+  font-family: twayair;
+  font-size: 1.2rem;
+}
+
+#login_btn:hover {
+  background-color: #55999A;
+  color: #FCFAEE;
+}
+
 
 .body_wrap {
   min-height: 100%;
@@ -86,6 +254,41 @@ a {
 .body_content {
   margin-top: 100px;
   padding-bottom: 100px;
+}
+
+.main_btn {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 4.3%;
+}
+
+.reserve_btn {
+  background-color: #FBFCF8;
+  border: solid lightblue;
+  border-radius: 10px;
+  font-family: twayair;
+  font-size: 3rem;
+  display: block;
+}
+
+.reserve_btn:hover {
+  background-color: #75A6DE;
+  color:mintcream;
+}
+
+.status_btn {
+  background-color: #FBFCF8;
+  border: solid lightblue;
+  border-radius: 10px;
+  font-family: twayair;
+  font-size: 3rem;
+  display: block;
+}
+
+.status_btn:hover {
+  background-color: #75A6DE;
+  color:mintcream;
 }
 
 
