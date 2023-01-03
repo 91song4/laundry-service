@@ -1,3 +1,9 @@
+// 쿠키에 값이 있을 경우
+if (document.cookie.length > 0) {
+  window.location.replace('main.login.html');
+}
+
+
 const modal = document.querySelector('#modal');
 const modal_close_btn = document.querySelector('#modal-close-btn');
 
@@ -28,7 +34,7 @@ signup_btn.addEventListener('click', (event) => {
                           <input class="signForm"  placeholder="비밀번호 확인" type="password">\
                        </div>
                        <div class="sign_usertype">
-                          <select class="form-select" aria-label="Default select example">                   
+                          <select class="form-select signForm" aria-label="Default select example">                   
                           <option selected value="0">사장님</option>
                           <option value="1">고객</option>\
                           </select>
