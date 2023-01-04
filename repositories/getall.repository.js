@@ -20,7 +20,7 @@ class Getallrepository {
       attributes:['service_request.name','service_request.phone','service_request.address','service_request.request_details','current_status','request_id','provider_id']
     });
     //const service_request1 = await service_request.findAll();
-    console.log("repository옴?",require_status);
+    //console.log("repository옴?",require_status);
     return require_status;
   };
 
@@ -28,7 +28,7 @@ class Getallrepository {
   //수거완료->배송중->배송완료 로 업데이트 가능
   //배송완료 user point +10,000
   updateStatus = async (request_id,provider_id,current_status) => {
-    console.log("repository왔니?",request_id,provider_id,current_status);
+    //console.log("repository왔니?",request_id,provider_id,current_status);
     const updateRequireStatus = await request_status.update(
       { current_status,provider_id },
       { where: { request_id } }
