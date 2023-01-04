@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,29 +28,79 @@
 
 <body>
   <script>
-    function show_status(){
+    $(document).ready(function () {
+
+    show_status()
+    });
+    function put_status(i){
       $.ajax({
         type:"GET",
-        url:"localhost:8080/api/status",
+        url:"/api/status",
         data:{},
         success:function(response){
           console.log(response)
-          // let rows = response['requirestatus']
-          // for(let i = 0 ; i<rows.length;i++ ){
-          //   let request_id = rows[i][request_id]
-          //   let provider_id = rows[i][provider_id]
-          //   let status = rows[i][current_status]
-          //   let temp_html = ` <div class="status">
-          //                       <li>${provider_id}</li>
-          //                       <li>${status}</li>
-          //                       <li>${request_id}</li>
-          //                       <li>요구사항</li>
-          //                       <li>주소???</li>
-          //                       <li>번호???</li>
-          //                       <li><button>리뷰버튼</button></li>
-          //                     </div>`
-          //                     $('#statu').append(temp_html)
-          // }
+          let result3 = [];
+          response.data.forEach((item)=>{
+            result3.push([item.current_status,item.provider_id,item.request_id]);
+          })
+
+          let new_status = prompt("상태 3,4,5")//변경할 상태
+          //let provider_id = jwt. 토큰으로 사장번호 가져와
+          //if(토큰사장번호==result[i][1])자기꺼나 비어있으면 변경가능
+          console.log(result3);
+          $.ajax({
+            type:"PUT",
+            url:"/api/status/result3[i][2]",//url 이게맞나...
+            data:{
+              'current_status':new_status,
+              'provider_id':provider_id//비어있을때 넣어줄거
+            },
+            success:function(){
+              alert("수정되었습니다")
+              window.location.reload()
+            }
+          })
+          // let inputstatus=prompt("수거완료 배송중 배송완료","1 2 3 4 5");
+
+        }
+      })
+
+    }
+    function show_status(){
+      $.ajax({
+        type:"GET",
+        url:"/api/status",
+        data:{},
+        success:function(response){
+          let result3 = [];
+          response.data.forEach((item)=>{
+            result3.push([item.name, item.current_status,item.address,item.phone,item.request_details,item.request_id]);
+          })
+
+          console.log(result3);
+          
+          for(let i = 0 ; i<result3.length;i++ ){
+            let name = result3[i][0]
+            let address = result3[i][2]
+            let phone = result3[i][3]
+            let request_details = result3[i][4]
+            // let status = result3[i][1]
+            if(result3[i][1]==1){let status = "수거 완료"}
+            else if(result3[i][1]==2)(status = "배송 중")
+            else if(result3[i][1]==3)(status = "수거 완료")
+            else if(result3[i][1]==4)(status = "배송 중")
+            else if(result3[i][1]==5)(status = "배송 완료")
+            let temp_html = ` <div class="status">
+                                <li>이름:${name}-</li>
+                                <li>상태:${status}-</li>
+                                <button onclick="put_status(${i})">수정</button>
+                                <li>주소:${address}-</li>
+                                <li>연락처:${phone}-</li>
+                                <li>요구사항:${request_details}-</li>
+                                <li><button>리뷰버튼</button>-</li>
+                              </div>`
+                              $('#statu').append(temp_html)
+          }
         }
       });
     }
@@ -77,7 +128,7 @@
     <img src="..\static\about-static\images\알잘딱깔세 (1).png">
   </div>
   <div id="statu">
-    
+
   </div>
   </div>
 

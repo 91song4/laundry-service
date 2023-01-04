@@ -11,7 +11,7 @@ class GetallController{
     getRequireStatus = async(req,res,next)=>{
         // 서비스 계층에 구현된 findAllLaundry 로직을 실행합니다.
         const requirestatus = await this.getallService.findAllLaundry();
-        
+        console.log("컨트롤러확인",requirestatus,jwt.sign);
         res.status(200).json({data:requirestatus});
     };
 
