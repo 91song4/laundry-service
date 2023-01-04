@@ -3,7 +3,7 @@
     "username": "root",
     "password": "1q2w3e4r",
     "database": "laundry_service",
-    "host": "express-database.cejmoex3cueb.ap-northeast-2.rds.amazonaws.com",
+    "host": "express-database2.cejmoex3cueb.ap-northeast-2.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {

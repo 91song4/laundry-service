@@ -1,7 +1,7 @@
 //클라이언트의 요청을 처리 한 후 서버에서 처리된 결과를 반환
 //예외(Exception)를  처리 
 const GetallService = require('../services/getall.service');
-
+const jwt = require('jsonwebtoken');
 
 // require_status의 컨트롤러(Controller)역할을 하는 클래스 
 class GetallController{
@@ -11,7 +11,7 @@ class GetallController{
     getRequireStatus = async(req,res,next)=>{
         // 서비스 계층에 구현된 findAllLaundry 로직을 실행합니다.
         const requirestatus = await this.getallService.findAllLaundry();
-
+        
         res.status(200).json({data:requirestatus});
     };
 
