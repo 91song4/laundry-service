@@ -75,12 +75,13 @@ login_btn.addEventListener('click', (event) => {
                        <input placeholder="이메일" class="signForm"  type="text">\
                       </div>
                       <div class="pw_form">
-                        <input placeholder="비밀번호" class="signForm"  type="password">\
+                        <input placeholder="비밀번호" id="pw-input" class="signForm"  type="password">\
                       </div> 
                      </div>
                     `;
   modal_content.innerHTML = temp_html;
 
+  const pw_input = document.querySelector('#pw-input');
   const new_login_btn = document.createElement('button');
   new_login_btn.setAttribute('id', 'login_btn')
   new_login_btn.textContent = '로그인';
@@ -97,6 +98,13 @@ login_btn.addEventListener('click', (event) => {
       alert(error.request.response);
     })
   })
+
+  pw_input.addEventListener('keyup', (e) => {
+    if (e.key === 'Enter') {
+      new_login_btn.click();
+    }
+  })
+
 })
 
 // 모달창 닫기 - 외부영역 클릭
