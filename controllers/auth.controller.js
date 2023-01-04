@@ -39,7 +39,6 @@ class AuthController {
         const userId = isAvailableToken.user_id;
         await this.userService.findIdUser(userId)
           .then((user) => {
-            console.log(user);
             res.locals.user = user;
             next();
           });
