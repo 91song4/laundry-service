@@ -40,7 +40,7 @@ class AuthController {
         await this.userService.findIdUser(userId)
           .then((user) => {
             console.log(user);
-            res.locals.user = user.dataValues;
+            res.locals.user = user;
             next();
           });
       } else {
