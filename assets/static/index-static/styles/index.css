@@ -1,20 +1,22 @@
 @font-face {
   font-family: 'Cafe24SsurroundAir';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff') format('woff');
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff')
+    format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'twayair';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayair.woff') format('woff');
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayair.woff')
+    format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 body {
   margin: 0;
-  background-color: #FBFCF8;
+  background-color: #fbfcf8;
 }
 
 a {
@@ -27,7 +29,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #C4F7FF;
+  background-color: #c4f7ff;
   padding: 8px 130px;
 }
 
@@ -35,9 +37,8 @@ a {
   font-size: 50px;
   font-weight: bold;
   text-shadow: 1px 1px 1px gray;
-  color: #FCFAEE;
+  color: #fcfaee;
   display: flex;
-  
 }
 
 .navbar_logo i {
@@ -53,7 +54,6 @@ a {
   font-size: 1.5rem;
   font-weight: bold;
   text-shadow: 1px 1px 1px gray;
-
 }
 
 .navbar_menu li {
@@ -61,7 +61,7 @@ a {
 }
 
 .navbar_menu li:hover {
-  background-color: #8FD3FD;
+  background-color: #8fd3fd;
   border-radius: 4px;
 }
 
@@ -78,14 +78,14 @@ a {
 }
 
 .navbar_button button:hover {
-  background-color: #8FD3FD;
-  color: #FBFCF8;
+  background-color: #8fd3fd;
+  color: #fbfcf8;
   border-radius: 4px;
 }
 
 .signin_form {
   text-align: center;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   padding-top: 10%;
 }
@@ -184,19 +184,35 @@ a {
   justify-content: center;
   border: none;
   border-radius: 4px;
-  background-color:#FBFCF8;
+  background-color: #fbfcf8;
   font-family: twayair;
   font-size: 1.1rem;
 }
 
 #signin_btn:hover {
-  background-color: #55999A;
-  color: #FCFAEE;
+  background-color: #55999a;
+  color: #fcfaee;
+}
+
+#request_btn {
+  width: 30%;
+  height: 40px;
+  justify-content: center;
+  border: none;
+  border-radius: 4px;
+  background-color: #fbfcf8;
+  font-family: twayair;
+  font-size: 1.1rem;
+}
+
+#request_btn :hover {
+  background-color: #55999a;
+  color: #fcfaee;
 }
 
 .login_form {
   text-align: center;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   padding-top: 10%;
 }
@@ -234,16 +250,15 @@ a {
   justify-content: center;
   border: none;
   border-radius: 4px;
-  background-color:#FBFCF8;
+  background-color: #fbfcf8;
   font-family: twayair;
   font-size: 1.2rem;
 }
 
 #login_btn:hover {
-  background-color: #55999A;
-  color: #FCFAEE;
+  background-color: #55999a;
+  color: #fcfaee;
 }
-
 
 .body_wrap {
   min-height: 100%;
@@ -264,7 +279,7 @@ a {
 }
 
 .reserve_btn {
-  background-color: #FBFCF8;
+  background-color: #fbfcf8;
   border: solid lightblue;
   border-radius: 10px;
   font-family: twayair;
@@ -273,12 +288,12 @@ a {
 }
 
 .reserve_btn:hover {
-  background-color: #75A6DE;
-  color:mintcream;
+  background-color: #75a6de;
+  color: mintcream;
 }
 
 .status_btn {
-  background-color: #FBFCF8;
+  background-color: #fbfcf8;
   border: solid lightblue;
   border-radius: 10px;
   font-family: twayair;
@@ -287,19 +302,15 @@ a {
 }
 
 .status_btn:hover {
-  background-color: #75A6DE;
-  color:mintcream;
+  background-color: #75a6de;
+  color: mintcream;
 }
-
-
-
 
 @media screen and (max-width: 768px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
     padding: 8px 24px;
-
   }
 
   .navbar_logo {
@@ -320,5 +331,4 @@ a {
     width: 100%;
     text-align: center;
   }
-
 }
