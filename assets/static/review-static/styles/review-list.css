@@ -6,22 +6,20 @@
 }
 
 @font-face {
-  font-family: 'HS-Regular';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/HS-Regular.woff') format('woff');
+  font-family: 'Cafe24SsurroundAir';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff')
+    format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 .body-content {
-  
   height: 100vh;
   width: 100%;
   margin: auto;
 }
 
 .body-wrap {
-  border: 2px solid;
-  border-color: rgb(245, 226, 188);
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -32,14 +30,14 @@
 }
 
 .title {
-  font-family: HS-Regular;
-  font-size: 5rem;
-  color: rgb(202, 190, 250);
-  text-shadow: 1px 1px 1px gray;
+  font-family: Cafe24SsurroundAir;
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: rgb(28, 44, 145);
   text-align: center;
-  margin-top: 4%;
 
 }
+
 
 .review_list {
   margin-left: 13%;
@@ -47,72 +45,68 @@
   height: 25%;
   width: 74%;
   display: flex;
-  border: solid 2px rgb(163, 201, 227);
-  border-style: dashed ;
-  border-radius: 6px;
-}
-
-.review_head {
-  background-color: cornsilk;
-  height: 100%;
-  width: 30%;
+  background-color: white;
+  border: solid 1px;
+  border-radius: 25px;
+  border-color: #c9ccc4;
 }
 
 .review_body {
-  margin-left: 3%;
+  margin-left: 3.6%;
   height: 100%;
-  width: 63%;
- 
+  width: 100%;
 }
 
 .review_name {
   width: 100%;
-  height: 20%;
+  height: 15%;
+  margin-top: 4%;
   font-family: GmarketSansMedium;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  color: darkslategray;
+  color: rgb(28, 44, 145);
 }
 
-/* .provider_name {
+ .provider_name {
   width: 100%;
-  height: 20%;
-} */
+  height: 15%;
+  font-family: GmarketSansMedium;
+  font-size: 1.2rem;
+  color: rgb(88, 93, 128);
+
+} 
 
 .review_rate {
   width: 100%;
-  height: 20%;
+  height: 12%;
   font-family: GmarketSansMedium;
-  font-size: 2rem;
+  font-size: 1.3rem;
   font-weight: bold;
-  color:rgb(99, 151, 223);
+  color:rgb(244, 184, 63);
 }
 
 .review_content {
-  width: 100%;
-  height: 60%;
+  width: 108%;
+  height: 43%;
   font-family: GmarketSansMedium;
   font-size: 1.2rem;
-  color: darkslategray;
-}
-
-.review_tail {
-  height: 100%;
-  width: 7%;
 }
 
 .review_delete {
-  height: 30px;
-  width: 50px;
-  margin-top: 10px;
+  height: 35px;
+  width: 60px;
+  margin-top: 33px;
   border: none;
-  background-color:rgb(153, 167, 172);
+  border-radius: 20px;
+  background-color:rgb(231, 230, 230);
   font-family: GmarketSansMedium;
-  color: aliceblue;
-
+  color: rgb(69, 69, 69);
   font-size: 1rem;
+  margin-right: 40px;
+  align-items: center;
+  padding-top: 5px;
 }
 
 .review_delete:hover {
-  background-color: rgb(172, 66, 84);
+  background-color: rgb(188, 188, 188);
 }

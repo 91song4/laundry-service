@@ -63,6 +63,9 @@ reserve_btn.addEventListener('click', () => {
     modalOn();
     const temp_html = `
                         <div class="signin_form">
+                          <div class="reserve_title">
+                            예약 하기
+                          </div>
                           <div class="sign_nick">
                           <input class="signForm" id="first_input" placeholder="닉네임" type="text">
                         </div>
@@ -130,9 +133,13 @@ reserve_btn.addEventListener('click', () => {
   }
 });
 
+
 signup_btn.addEventListener('click', (event) => {
   modalOn();
   const temp_html = `<div class="signin_form">
+                        <div class="signin_title">
+                         회원가입
+                        </div>
                        <div class="sign_email">
                           <input class="signForm"  id="first_input" placeholder="이메일" type="text">\
                        </div> 
@@ -156,7 +163,7 @@ signup_btn.addEventListener('click', (event) => {
                           <option selected value="0">사장님</option>
                           <option value="1">고객</option>\
                           </select>
-                       </div>                                        
+                    </div>                                        
                     `;
 
   modal_content.innerHTML = temp_html;
@@ -184,17 +191,20 @@ signup_btn.addEventListener('click', (event) => {
       alert(error.request.response);
     })
   })
-})
+});
 
 login_btn.addEventListener('click', (event) => {
   modalOn();
   const temp_html = `<div class="login_form">
-                      <div class="email_form">
-                       <input placeholder="이메일" id="first_input" class="signForm"  type="text">\
-                      </div>
-                      <div class="pw_form">
-                        <input placeholder="비밀번호" id="pw-input" class="signForm"  type="password">\
-                      </div> 
+                        <div class="login_title">
+                          로그인
+                        </div>
+                        <div class="email_form">
+                          <input placeholder="이메일" id="first_input" class="signForm"  type="text">\
+                        </div>
+                        <div class="pw_form">
+                          <input placeholder="비밀번호" id="pw-input" class="signForm"  type="password">\
+                        </div> 
                      </div>
                     `;
   modal_content.innerHTML = temp_html;

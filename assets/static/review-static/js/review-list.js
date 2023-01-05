@@ -24,29 +24,25 @@ function show_review() {
 
 
         let temp_html = `
-        <div class="review_list">
-          <div class="review_head">
-              img
-          </div>
-          <div class="review_body">
-            <div class="review_name">
-              ${nickname}
-            </div>
-            <div class="provider_name">
-              ${provider_id}
-            </div>
-            <div class="review_rate">
-              ${output}
-            </div>
-            <div class="review_content">
-              ${review}
-            </div>
-          </div>
-          <div class="review_tail">
-            <button class="review_delete" onclick="delete_review(${review_id})">삭제</button>
-
-          </div>
-        </div>  
+           <div class="review_list">
+                <div class="review_body">
+                    <div class="review_name">
+                      ${nickname}고객님
+                    </div>
+                    <div class="provider_name">
+                      ${provider_id}사장님의 세탁소
+                    </div>
+                    <div class="review_rate">
+                      ${output}
+                    </div>
+                    <div class="review_content">
+                      ${review}
+                    </div>
+                </div>
+                
+                  <button class="review_delete" onclick="delete_review(${review_id})">삭제</button>
+                
+            </div>   
         `
         $('.body-wrap').append(temp_html)
       }
