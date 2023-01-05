@@ -36,7 +36,7 @@ class UserRepository {
     console.log('로그인 레파짓토리 진입');
     console.log(email);
     const createUserData = await this.UserModel.findOne({ raw: true, where: { email } });
-    console.log(createUserData);
+    console.log('여기입니다',createUserData);
     return createUserData;
   }
 

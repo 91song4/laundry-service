@@ -6,6 +6,7 @@ const getallRouter = require('./getall.routes.js');
 const express = require('express');
 const router = express.Router();
 
+router.use(express.urlencoded({extended: false})),
 router.use('/signup', signupRouter);
 router.use('/login', loginRouter);
 router.use('/reviews', reviewRouter);
