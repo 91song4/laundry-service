@@ -32,7 +32,7 @@ module.exports = {
         allowNull: false,
       },
       photo: {
-        type: Sequelize.BLOB,
+        type: Sequelize.STRING,
         allowNull: false,
       },
       request_details: {
