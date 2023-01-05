@@ -6,7 +6,8 @@ module.exports = (sequelize, DataTypes) => {
   class service_request extends Model {
     static associate(models) {
       models.service_request.belongsTo(models.user, { foreignKey: "user_id" });
-      models.service_request.hasMany(models.request_status, { foreignKey: "request_id" });
+      models.service_request.hasMany(models.service_request, { foreignKey: "request_id" });
+      models.service_request.belongsTo(models.review, { foreignKey: "request_id" });
     }
   }
   service_request.init({

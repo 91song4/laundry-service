@@ -29,6 +29,16 @@ module.exports = {
         onUpdate: 'cascade',
         onDelete: 'cascade',
       },
+      request_id: {
+        type: Sequelize.BIGINT,
+        allowNull: false,
+        references: {
+          model: 'service_requests',
+          key: 'request_id',
+        },
+        onUpdate: 'cascade',
+        onDelete: 'cascade',
+      },
       star: {
         type: Sequelize.INTEGER,
         allowNull: false,
