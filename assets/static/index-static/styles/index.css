@@ -16,12 +16,12 @@
 
 body {
   margin: 0;
-  background-color: #fbfcf8;
+  background-color: #f0f6fa;
 }
 
 a {
   text-decoration: none;
-  color: azure;
+  color: rgb(28, 44, 145)
 }
 
 .navbar {
@@ -29,69 +29,66 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #c4f7ff;
-  padding: 8px 130px;
+  padding: 1px 220px;
 }
 
 .navbar_logo {
-  font-size: 50px;
+  font-size: 30px;
   font-weight: bold;
-  text-shadow: 1px 1px 1px gray;
-  color: #fcfaee;
   display: flex;
 }
 
 .navbar_logo i {
-  font-size: 3rem;
-  color: aliceblue;
+  font-size: 1.8rem;
+  color: rgb(28, 44, 145);
 }
 
 .navbar_menu {
   display: flex;
   list-style: none;
-  padding-left: 0;
-
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
-  text-shadow: 1px 1px 1px gray;
 }
 
 .navbar_menu li {
   padding: 8px 20px;
 }
 
-.navbar_menu li:hover {
-  background-color: #8fd3fd;
-  border-radius: 4px;
-}
+/* .navbar_menu li:hover {
+  background-color: #d9effd;
+  border-radius: 20px;
+} */
 
 .navbar_button button {
   font-family: Cafe24SsurroundAir;
   font-size: 1.1rem;
   background-color: rgba(0, 0, 0, 0);
-  text-shadow: 1px 1px 1px gray;
-  color: #c5c3be;
-  border: solid lightblue;
-  border-style: dotted;
-  border-radius: 3px;
-  margin-top: 40px;
+  color: #3f47a0;
+  border: none;
 }
 
-.navbar_button button:hover {
-  background-color: #8fd3fd;
-  color: #fbfcf8;
-  border-radius: 4px;
-}
 
 .signin_form {
   text-align: center;
   justify-content: center;
   align-items: center;
-  padding-top: 10%;
+}
+
+.signin_title {
+  color: #3f47a0;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: Cafe24SsurroundAir;
+  margin-top: 8%;
+}
+
+.sign_email {
+  margin-top: 10%;
 }
 
 .sign_email input {
   border: none;
+  background-color: #ededed;
   height: 30px;
   width: 80%;
   text-align: center;
@@ -99,12 +96,17 @@ a {
   font-size: 1rem;
 }
 
+.sign_email input:focus {
+  outline: none;
+}
+
 .sign_nick {
-  margin-top: 5%;
+  margin-top: 3%;
 }
 
 .sign_nick input {
   border: none;
+  background-color: #ededed;
   height: 30px;
   width: 80%;
   text-align: center;
@@ -112,12 +114,17 @@ a {
   font-size: 1rem;
 }
 
+.sign_nick input:focus {
+  outline: none;
+}
+
 .sign_phone {
-  margin-top: 5%;
+  margin-top: 3%;
 }
 
 .sign_phone input {
   border: none;
+  background-color: #ededed;
   height: 30px;
   width: 80%;
   text-align: center;
@@ -125,12 +132,17 @@ a {
   font-size: 1rem;
 }
 
+.sign_phone input:focus {
+  outline: none;
+}
+
 .sign_address {
-  margin-top: 5%;
+  margin-top: 3%;
 }
 
 .sign_address input {
   border: none;
+  background-color: #ededed;
   height: 30px;
   width: 80%;
   text-align: center;
@@ -138,12 +150,17 @@ a {
   font-size: 1rem;
 }
 
+.sign_address input:focus {
+  outline: none;
+}
+
 .sign_pwd {
-  margin-top: 5%;
+  margin-top: 3%;
 }
 
 .sign_pwd input {
   border: none;
+  background-color: #ededed;
   height: 30px;
   width: 80%;
   text-align: center;
@@ -151,12 +168,17 @@ a {
   font-size: 1rem;
 }
 
+.sign_pwd input:focus {
+  outline: none;
+}
+
 .sign_repwd {
-  margin-top: 5%;
+  margin-top: 3%;
 }
 
 .sign_repwd input {
   border: none;
+  background-color: #ededed;
   height: 30px;
   width: 80%;
   text-align: center;
@@ -164,13 +186,18 @@ a {
   font-size: 1rem;
 }
 
+.sign_repwd input:focus {
+  outline: none;
+}
+
 .sign_usertype {
-  margin-top: 5%;
-  margin-bottom: 10%;
+  margin-top: 3%;
+  margin-bottom: 5%;
 }
 
 .sign_usertype select {
   border: none;
+  background-color: #ededed;
   height: 30px;
   width: 80%;
   text-align: center;
@@ -178,21 +205,18 @@ a {
   font-size: 1rem;
 }
 
+
 #signin_btn {
-  width: 30%;
-  height: 40px;
+  height: 50px;
+  width: 80%;
   justify-content: center;
   border: none;
-  border-radius: 4px;
-  background-color: #fbfcf8;
-  font-family: twayair;
-  font-size: 1.1rem;
+  background-color: #393db5;
+  font-family: Cafe24SsurroundAir;
+  font-size: 1.2rem;
+  color: white;
 }
 
-#signin_btn:hover {
-  background-color: #55999a;
-  color: #fcfaee;
-}
 
 #request_btn {
   width: 30%;
@@ -205,10 +229,6 @@ a {
   font-size: 1.1rem;
 }
 
-#request_btn :hover {
-  background-color: #55999a;
-  color: #fcfaee;
-}
 
 .login_form {
   text-align: center;
@@ -217,26 +237,39 @@ a {
   padding-top: 10%;
 }
 
+.login_title{
+  padding-top: 20%;
+  color: #3f47a0;
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: Cafe24SsurroundAir;
+}
+
 .email_form {
   margin-top: 10%;
 }
 
 .email_form input {
   border: none;
+  background-color: #ededed;
   height: 30px;
   width: 80%;
   text-align: center;
   font-family: Cafe24SsurroundAir;
   font-size: 1rem;
 }
+.email_form input:focus {
+  outline: none;
+}
 
 .pw_form {
-  margin-top: 5%;
-  margin-bottom: 10%;
+  margin-top: 3%;
+  margin-bottom: 3%;
 }
 
 .pw_form input {
   border: none;
+  background-color: #ededed;
   height: 30px;
   width: 80%;
   text-align: center;
@@ -244,20 +277,19 @@ a {
   font-size: 1rem;
 }
 
-#login_btn {
-  width: 30%;
-  height: 40px;
-  justify-content: center;
-  border: none;
-  border-radius: 4px;
-  background-color: #fbfcf8;
-  font-family: twayair;
-  font-size: 1.2rem;
+.pw_form input:focus {
+  outline: none;
 }
 
-#login_btn:hover {
-  background-color: #55999a;
-  color: #fcfaee;
+#login_btn {
+  height: 50px;
+  width: 80%;
+  justify-content: center;
+  border: none;
+  background-color: #393db5;
+  font-family: Cafe24SsurroundAir;
+  font-size: 1.2rem;
+  color: white;
 }
 
 .body_wrap {
@@ -279,32 +311,44 @@ a {
 }
 
 .reserve_btn {
-  background-color: #fbfcf8;
-  border: solid lightblue;
+  background-color: #f0f6fa;
+  border: solid #c9ccc4;
   border-radius: 10px;
   font-family: twayair;
   font-size: 3rem;
   display: block;
-}
-
-.reserve_btn:hover {
-  background-color: #75a6de;
-  color: mintcream;
 }
 
 .status_btn {
-  background-color: #fbfcf8;
-  border: solid lightblue;
+  background-color: #f0f6fa;
+  border: solid #c9ccc4;
   border-radius: 10px;
   font-family: twayair;
   font-size: 3rem;
   display: block;
 }
 
-.status_btn:hover {
-  background-color: #75a6de;
-  color: mintcream;
+.reserve_title {
+  color: #3f47a0;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: Cafe24SsurroundAir;
+  margin-top: 8%;
+  margin-bottom: 5%;
 }
+
+
+#request_btn {
+  height: 50px;
+  width: 80%;
+  justify-content: center;
+  border: none;
+  background-color: #393db5;
+  font-family: Cafe24SsurroundAir;
+  font-size: 1.2rem;
+  color: white;
+}
+
 
 @media screen and (max-width: 768px) {
   .navbar {

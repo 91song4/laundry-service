@@ -24,8 +24,7 @@ module.exports = (sequelize, DataTypes) => {
     request_id: DataTypes.STRING,
     provider_id: DataTypes.STRING,
     star: DataTypes.INTEGER,
-    review: DataTypes.STRING,
-    photo: DataTypes.BLOB
+    review: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'review',
