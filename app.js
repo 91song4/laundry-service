@@ -9,6 +9,7 @@ const httpServer = createServer(app);
 
 app.use(express.json(), cookieParser());
 app.use('/api', router);
+// app.use('/api', router);
 
 app.use(express.static("./assets/templates"));
 app.use(express.static("assets"));

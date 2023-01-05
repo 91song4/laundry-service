@@ -61,20 +61,28 @@ reserve_btn.addEventListener('click', () => {
     login_btn.click();
   } else {
     modalOn();
-    const temp_html = `<div class="signin_form">
-                       <div class="sign_nick">
-                          <input class="signForm" id="first_input" placeholder="닉네임" type="text">\
-                       </div>
-                       <div class="sign_phone">
-                          <input class="signForm"  placeholder="전화번호" type="text">\
-                       </div>
-                       <div class="sign_address">
-                          <input class="signForm"  placeholder="주소" type="text">\
-                       </div>
-                       <div class="sign_pwd">
-                          <input class="signForm"  placeholder="요청사항" type="text">\
-                       </div>
-                    `;
+    const temp_html = `
+                        <div class="signin_form">
+                          <div class="sign_nick">
+                          <input class="signForm" id="first_input" placeholder="닉네임" type="text">
+                        </div>
+                        <div class="sign_phone">
+                          <input class="signForm"  placeholder="전화번호" type="text">
+                        </div>
+                        <div class="sign_address">
+                          <input class="signForm"  placeholder="주소" type="text">
+                        </div>
+                        <div class="sign_pwd">
+                          <input class="signForm"  placeholder="요청사항" type="text">
+                        </div>
+                        <aside>
+                          <p><strong>세탁물 이미지</strong></p>
+                          <img id="profile-img" width="125;" src="../static/request-static/image/default.png" class="rounded float-start">
+                          <div>
+                            <input style="display:none" id="upload-btn" type="file" name="photo" accept="image/*" />
+                          </div>
+                        </aside>
+                       `;
 
     modal_content.innerHTML = temp_html;
 
@@ -84,18 +92,38 @@ reserve_btn.addEventListener('click', () => {
     document.querySelector('.signin_form').appendChild(request_btn);
     document.querySelector('#first_input').focus();
 
+    //이미지 업로드
+    const upload_btn = document.querySelector('#upload-btn');
+    const image_btn = document.querySelector('#profile-img');
+    // const submit_btn = document.querySelector('#submit-btn');
+    image_btn.addEventListener('click', () => { upload_btn.click() });
+    // upload_btn.addEventListener('change', () => { submit_btn.click(); });
     request_btn.addEventListener('click', async () => {
       const [name, phone, address, request_detail] = document.querySelectorAll('.signForm');
-
-      await axios.post('/api/request', {
-        name: name.value,
-        phone: phone.value,
-        address: address.value,
-        request_detail: request_detail.value
-      }).then((response) => {
-        // console.log(response);
-        window.location.reload();
+      const frm = new FormData();
+      frm.append('name', name.value);
+      frm.append('phone', phone.value);
+      frm.append('address', address.value);
+      frm.append('request_detail', request_detail.value);
+      frm.append('photo', upload_btn.files[0]);
+      // frm.append({
+      //   name: name.value,
+      //   phone: phone.value,
+      //   address: address.value,
+      //   request_detail: request_detail.value,
+      //   photo:upload_btn.files
+      // })
+      axios.post('/api/request', frm,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          }
+        }
+      ).then((response) => {
+        console.log(response);
+        // window.location.reload();
       }).catch((error) => {
+        alert('??????????????????');
         alert(error.request.response);
       })
     })
