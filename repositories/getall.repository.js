@@ -4,6 +4,7 @@
 
 const {request_status} = require("../models");
 const {service_request} = require('../models');
+
 class Getallrepository {
   
   // ORM인 Sequelize에서 Require_status 모델의 findAll 메소드를 사용해 데이터를 요청합니다.
@@ -17,7 +18,7 @@ class Getallrepository {
           attributes:[]
         }
       ],
-      attributes:['service_request.name','service_request.phone','service_request.address','service_request.request_details','current_status','request_id','provider_id']
+      attributes:['service_request.name','service_request.phone','service_request.photo','service_request.address','service_request.request_details','current_status','request_id','provider_id']
     });
     //const service_request1 = await service_request.findAll();
     //console.log("repository옴?",require_status);
