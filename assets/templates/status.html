@@ -108,19 +108,19 @@
             else if (result3[i][1] == 5) (status = "배송 완료")
             let temp_html = ` <form class="abc">
                                   <div class="col-12">
-                                      <label class="visually-hidden">이름:${name}</label>
+                                      <label class="visually-hidden">${name}</label>
                                   </div>
                                   <div class="col-12">
-                                      <label class="visually-hidden">주소:${address}</label>
+                                      <label class="visually-hidden">${address}</label>
                                   </div>
                                   <div class="col-12">
-                                      <label class="visually-hidden">연락처:${phone}</label>
+                                      <label class="visually-hidden">${phone}</label>
                                   </div>
                                   <div class="col-12">
-                                      <label class="visually-hidden">요구사항:${request_details}</label>
+                                      <label class="visually-hidden">${request_details}</label>
                                   </div>
                                   <div class="col-12">
-                                      <label class="visually-hidden">배송상태:${status}</label>
+                                      <label class="visually-hidden">${status}</label>
                                   </div>
 
                                   <div class="col-12">
@@ -133,7 +133,7 @@
                                         <option value="5">배송 완료</option>
                                       </select>
                                       <div class="input-group-append">
-                                        <button onclick="put_status(${i})" class="btn btn-outline-secondary" type="button">Button</button>
+                                        <button onclick="put_status(${i})" class="btn" type="button">Button</button>
                                       </div>
                                     </div>
 
@@ -168,6 +168,28 @@
   </nav>
   <div class="page_logo">
     <img src="..\static\about-static\images\알잘딱깔세 (1).png">
+  </div>
+  <div>
+    <form class="abc1">
+      <div class="col-12">
+          <label class="visually-hidden">이름</label>
+      </div>
+      <div class="col-12">
+          <label class="visually-hidden">주소</label>
+      </div>
+      <div class="col-12">
+          <label class="visually-hidden">연락처</label>
+      </div>
+      <div class="col-12">
+          <label class="visually-hidden">요구사항</label>
+      </div>
+      <div class="col-12">
+          <label class="visually-hidden">배송상태</label>
+      </div>
+      <div class="col-12">
+        <label class="visually-hidden">리뷰</label>
+      </div>
+  </form>
   </div>
   <div id="statu">
 
