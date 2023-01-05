@@ -33,13 +33,15 @@ class AuthController {
   auth_middleware = async (req, res, next) => {
     console.log('토큰 검증 미들웨어');
     const token = req.cookies.jwt;
+    console.log('test1,',token);
     try {
       const isAvailableToken = this.validateToken(token);
+      console.log('test2',isAvailableToken);
       if (!(isAvailableToken === false)) {
         const userId = isAvailableToken.user_id;
+        console.log('test3',userId);
         await this.userService.findIdUser(userId)
           .then((user) => {
-            console.log(user);
             res.locals.user = user;
             next();
           });
