@@ -73,8 +73,6 @@
         data: JSON.stringify({ 'current_status': target.value }),
         contentType: 'application/json; charset=utf-8',//https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=moonv11&logNo=220605582547
         success: function () {
-          data: JSON.stringify(jsondata)
-          alert("수정되었습니다")
           window.location.reload()
         }
       })
