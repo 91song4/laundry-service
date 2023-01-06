@@ -1,0 +1,48 @@
+.col-12 {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px gray;
+    color: rgb(63, 159, 184);
+    box-shadow: royalblue;
+    
+    margin-top: 20px;
+    margin-left: 20px;
+    max-width: 300px;
+    /* box-shadow: 0px 0px 4px 10px  rgb(63, 159, 184); */
+    
+    border-radius: 15px;
+  }
+
+  .abc {
+    display: flex;
+    text-align: center;
+
+  }
+  .abc1{
+    display: flex;
+    background-color: rgb(179, 214, 223);
+    text-align: center;
+    /* border-style: solid;
+    border-color: rgb(109, 189, 209); */
+  }
+  .btn{
+    text-shadow: 1px 1px 1px gray;
+    color: rgb(63, 159, 184);
+    border-radius: 5px;
+    background-color: white;
+    border:none;
+    text-align: center;
+  }
+  .btn:hover{
+    background:#C4F7FF;
+  }
+
+.custom-select{
+  border-radius: 5px;
+  color: rgb(63, 159, 184);
+  border-color: rgb(109, 189, 209)
+}

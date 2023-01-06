@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- favicon -->
+  <link rel="icon" type="image/png" sizes="16x16"
+    href="..\static\index-static\images\icons8-laundry-kiranshastry-gradient-16.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- index -->
+  <link rel="stylesheet" href="..\static\index-static\styles\index.css" />
+  <script defer src="..\static\index-static\js\index.js"></script>
+  <script src="https://kit.fontawesome.com/1bf0af30eb.js" crossorigin="anonymous"></script>
+
+  <!-- about -->
+  <link rel="stylesheet" href="..\static\about-static\styles\about.css" />
+  <!-- status -->
+  <link rel="stylesheet" type="text/css" href="..\static\index-static\styles\status.css">
+  <!-- 쿠키파서 -->
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.0/dist/js.cookie.min.js"></script>
+  <title>알잘딱깔세</title>
+</head>
+
+<body>
+  <script>
+    $(document).ready(function () {//npm run dev 서버 
+
+      show_status()
+    });
+    //그때마다 토큰에서 로그인된 유저정보를 받아오니까 상대방의 유저아이디
+    // console.log("토큰",document.cookie)//쿠키파서를 사용 안한다면 가공해서 split을 사용해서
+    // console.log(Cookies.get())
+
+
+    //1버튼에 1기능
+    //밖에서 함수를 만들어서 가져와 차라리
+
+    function getuserid() {
+      let result3 = [];
+      $.ajax({
+        type: "GET",
+        url: "/api/status",
+        data: {},
+        success: function (response) {
+          console.log(response)
+          response.data.forEach((item) => {
+            result3.push([item.current_status, item.provider_id, item.request_id]);
+          })
+        }
+      }
+      )
+      console.log("result3", result3)
+      return result3//current_status provider_id request_id
+    }
+
+
+    function put_status(i) {
+      //-1들어오면 에러처리
+      const target = document.getElementById(`inputGroupSelect${i}`)
+ 
+      const result3 = getuserid()
+
+      console.log(result3);
+      $.ajax({
+        type: "PUT",
+        url: `/api/status/${i + 1}`,//url `` 백틱으로하면 받아서 쓸 수 있다.
+        data: JSON.stringify({ 'current_status': target.value }),
+        contentType: 'application/json; charset=utf-8',//https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=moonv11&logNo=220605582547
+        success: function () {
+          window.location.reload()
+        }
+      })
+    }
+
+
+
+    function show_status() {
+      $.ajax({
+        type: "GET",
+        url: "/api/status",
+        data: {},
+        success: function (response) {
+          let result3 = [];
+          response.data.forEach((item) => {
+            result3.push([item.name, item.current_status, item.address, item.phone, item.request_details, item.request_id]);
+          })
+
+          console.log(result3);
+
+          for (let i = 0; i < result3.length; i++) {
+            let name = result3[i][0]
+            let address = result3[i][2]
+            let phone = result3[i][3]
+            let request_details = result3[i][4]
+            // let status = result3[i][1]
+            if (result3[i][1] == 1) { let status = "수거 완료" }
+            else if (result3[i][1] == 2) (status = "수거 중")
+            else if (result3[i][1] == 3) (status = "수거 완료")
+            else if (result3[i][1] == 4) (status = "배송 중")
+            else if (result3[i][1] == 5) (status = "배송 완료")
+            let temp_html = ` <form class="abc">
+                                  <div class="col-12">
+                                      <label class="visually-hidden">${name}</label>
+                                  </div>
+                                  <div class="col-12">
+                                      <label class="visually-hidden">${address}</label>
+                                  </div>
+                                  <div class="col-12">
+                                      <label class="visually-hidden">${phone}</label>
+                                  </div>
+                                  <div class="col-12">
+                                      <label class="visually-hidden">${request_details}</label>
+                                  </div>
+                                  <div class="col-12">
+                                      <label class="visually-hidden">${status}</label>
+                                  </div>
+
+                                  <div class="col-12">
+                                      <select name="order" class="custom-select" id="inputGroupSelect${i}">
+                                        <option value="-1" selected>상태변경</option>
+                                        <option value="1">대기 중</option>
+                                        <option value="2">수거 중</option>
+                                        <option value="3">수거 완료</option>
+                                        <option value="4">배송 중</option>
+                                        <option value="5">배송 완료</option>
+                                      </select>
+                                      <div class="input-group-append">
+                                        <button onclick="put_status(${i})" class="btn" type="button">Button</button>
+                                      </div>
+                                    </div>
+
+                                  
+                              </form>`
+            $('#statu').append(temp_html)
+          }
+        }
+      });
+    }
+  </script>
+  <nav class="navbar">
+
+    <div class="navbar_logo">
+
+      <a href="/">알잘딱깔세</a>
+      <i class="fa-solid fa-soap"></i>
+
+
+    </div>
+
+    <ul class="navbar_menu">
+      <li><a href="/">Home</a></li>
+      <li><a href="templates/about.html">회사소개</a></li>
+      <li><a href="">세탁현황</a></li>
+      <li><a href="">마이 페이지</a></li>
+    </ul>
+
+
+  </nav>
+  <div class="page_logo">
+    <img src="..\static\about-static\images\알잘딱깔세 (1).png">
+  </div>
+  <div>
+    <form class="abc1">
+      <div class="col-12">
+          <label class="visually-hidden">이름</label>
+      </div>
+      <div class="col-12">
+          <label class="visually-hidden">주소</label>
+      </div>
+      <div class="col-12">
+          <label class="visually-hidden">연락처</label>
+      </div>
+      <div class="col-12">
+          <label class="visually-hidden">요구사항</label>
+      </div>
+      <div class="col-12">
+          <label class="visually-hidden">배송상태</label>
+      </div>
+      <div class="col-12">
+        <label class="visually-hidden">리뷰</label>
+      </div>
+  </form>
+  </div>
+  <div id="statu">
+
+  </div>
+  </div>
+
+  </div>
+
+
+
+</body>
+
+</html>
