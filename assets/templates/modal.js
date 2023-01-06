@@ -33,6 +33,7 @@ modal_close_btn.addEventListener('click', (event) => {
   modalOff();
 })
 
+
 function modalOn() {
   modal.style.display = 'flex';
 }
@@ -99,12 +100,13 @@ reserve_btn.addEventListener('click', () => {
     image_btn.addEventListener('click', () => { upload_btn.click() });
     // upload_btn.addEventListener('change', () => { submit_btn.click(); });
     request_btn.addEventListener('click', async () => {
-      const [name, phone, address, request_detail] = document.querySelectorAll('.signForm');
+      const [name, phone, address, request_details] = document.querySelectorAll('.signForm');
       const frm = new FormData();
+
       frm.append('name', name.value);
       frm.append('phone', phone.value);
       frm.append('address', address.value);
-      frm.append('request_detail', request_detail.value);
+      frm.append('request_details', request_details.value);
       frm.append('photo', upload_btn.files[0]);
       // frm.append({
       //   name: name.value,
@@ -183,7 +185,7 @@ signup_btn.addEventListener('click', (event) => {
     }).catch((error) => {
       alert(error.request.response);
     })
-  })
+  });
 })
 
 login_btn.addEventListener('click', (event) => {

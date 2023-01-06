@@ -12,4 +12,6 @@ const authController = new AuthController();
 
 router.post('/', authController.auth_middleware, multer.single('photo'), requestController.createRequest);
 
+router.get('/', authController.auth_middleware, multer.single('photo'), requestController.getRequests);
+
 module.exports = router;

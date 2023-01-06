@@ -1,0 +1,118 @@
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'HS-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/HS-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  .body-content {
+    
+    height: 100vh;
+    width: 100%;
+    margin: auto;
+  }
+  
+  .body-wrap {
+    border: 2px solid;
+    border-color: rgb(245, 226, 188);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 70%;
+    margin: auto;
+    margin-top: 1%;
+    
+  }
+  
+  .title {
+    font-family: HS-Regular;
+    font-size: 5rem;
+    color: rgb(202, 190, 250);
+    text-shadow: 1px 1px 1px gray;
+    text-align: center;
+    margin-top: 4%;
+  
+  }
+  
+  .review_list {
+    margin-left: 13%;
+    margin-top: 3%;
+    height: 25%;
+    width: 74%;
+    display: flex;
+    border: solid 2px rgb(163, 201, 227);
+    border-style: dashed ;
+    border-radius: 6px;
+  }
+  
+  .review_head {
+    background-color: cornsilk;
+    height: 100%;
+    width: 30%;
+  }
+  
+  .review_body {
+    margin-left: 3%;
+    height: 100%;
+    width: 63%;
+   
+  }
+  
+  .review_name {
+    width: 100%;
+    height: 20%;
+    font-family: GmarketSansMedium;
+    font-size: 2rem;
+    font-weight: bold;
+    color: darkslategray;
+  }
+  
+  /* .provider_name {
+    width: 100%;
+    height: 20%;
+  } */
+  
+  .review_rate {
+    width: 100%;
+    height: 20%;
+    font-family: GmarketSansMedium;
+    font-size: 2rem;
+    font-weight: bold;
+    color:rgb(99, 151, 223);
+  }
+  
+  .review_content {
+    width: 100%;
+    height: 60%;
+    font-family: GmarketSansMedium;
+    font-size: 1.2rem;
+    color: darkslategray;
+  }
+  
+  .review_tail {
+    height: 100%;
+    width: 7%;
+  }
+  
+  .review_delete {
+    height: 30px;
+    width: 50px;
+    margin-top: 10px;
+    border: none;
+    background-color:rgb(153, 167, 172);
+    font-family: GmarketSansMedium;
+    color: aliceblue;
+  
+    font-size: 1rem;
+  }
+  
+  .review_delete:hover {
+    background-color: rgb(172, 66, 84);
+  }
