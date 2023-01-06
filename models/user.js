@@ -11,7 +11,9 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       models.user.hasMany(models.service_request, { foreignKey: "user_id" });
-      models.user.hasMany(models.review, { foreignKey: "user_id" });
+      // models.user.hasMany(models.review, { foreignKey: "user_id" });
+      models.user.hasMany(models.review, { foreignKey:'customer_id', as: 'reviews' });
+      models.user.hasMany(models.review, {foreignKey:'provider_id', as: 'review'});
     }
   }
   user.init({
@@ -25,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
     phone: DataTypes.STRING,
     address: DataTypes.STRING,
     point: DataTypes.BIGINT,
-    user_type: DataTypes.BIGINT,
+    user_type: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'user',

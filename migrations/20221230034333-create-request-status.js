@@ -26,7 +26,7 @@ module.exports = {
         onDelete: 'cascade'
       },
       current_status: {
-        type: Sequelize.BIGINT,
+        type: Sequelize.INTEGER,
         allowNull: false,
         defaultValue: 0,
       },

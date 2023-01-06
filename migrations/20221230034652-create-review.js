@@ -29,23 +29,28 @@ module.exports = {
         onUpdate: 'cascade',
         onDelete: 'cascade',
       },
-      star: {
+      request_id: {
         type: Sequelize.BIGINT,
+        allowNull: false,
+        references: {
+          model: 'service_requests',
+          key: 'request_id',
+        },
+        onUpdate: 'cascade',
+        onDelete: 'cascade',
+      },
+      star: {
+        type: Sequelize.INTEGER,
         allowNull: false,
       },
       review: {
-        type: Sequelize.TEXT,
-        allowNull: false,
-      },
-      photo: {
-        type: Sequelize.BLOB,
+        type: Sequelize.STRING,
         allowNull: false,
       },
       created_At: {
         allowNull: false,
         type: Sequelize.DATE,
         defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
-
       },
     });
   },
