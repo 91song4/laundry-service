@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'Cafe24SsurroundAir';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 .col-12 {
     display: flex;
     list-style: none;
@@ -5,8 +14,8 @@
     text-align: center;
     font-size: 1.5rem;
     font-weight: bold;
-    text-shadow: 1px 1px 1px gray;
-    color: rgb(63, 159, 184);
+    font-family: Cafe24SsurroundAir;
+    color: rgb(28, 44, 145);
     box-shadow: royalblue;
     
     margin-top: 20px;
@@ -20,29 +29,33 @@
   .abc {
     display: flex;
     text-align: center;
+    justify-content: space-between;
+    background-color: white;
 
   }
   .abc1{
     display: flex;
-    background-color: rgb(179, 214, 223);
+    background-color: rgb(255, 255, 255);
     text-align: center;
     /* border-style: solid;
     border-color: rgb(109, 189, 209); */
+    border: solid 1px;
+    border-color: #c9ccc4;
+    justify-content: space-between; 
   }
+
+
   .btn{
-    text-shadow: 1px 1px 1px gray;
-    color: rgb(63, 159, 184);
     border-radius: 5px;
     background-color: white;
     border:none;
     text-align: center;
-  }
-  .btn:hover{
-    background:#C4F7FF;
+    font-family: Cafe24SsurroundAir;
   }
 
 .custom-select{
+  font-family: Cafe24SsurroundAir;
   border-radius: 5px;
-  color: rgb(63, 159, 184);
-  border-color: rgb(109, 189, 209)
+  color: black;
+  border-color: rgb(28, 44, 145);
 }
