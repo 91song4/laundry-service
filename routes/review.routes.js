@@ -37,7 +37,6 @@ router.post('/:post_id', authMiddleware.auth_middleware, async (req, res) => {
      customer_id: user_id,
      provider_id: result.provider_id,
      request_id: post_id,
-     photo: 'test'
    })
    return res.status(200).json({message:'리뷰 작성을 완료했습니다.'})
 
