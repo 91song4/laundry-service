@@ -6,7 +6,7 @@ class RequestController {
   createRequest = async (req, res) => {
     console.log('세탁요청 컨트롤러 진입');
     const userInfo = res.locals.user;
-    const { name, phone, address, request_detail } = req.body;
+    const { name, phone, address, request_details } = req.body;
     const { filename: photo } = req.file;
     console.log(userInfo);
     await this.requestService.createRequest(userInfo.user_id,req.body, photo);

@@ -1,6 +1,5 @@
 const RequestRepository = require('../repositories/request.repository.js');
 const { service_request } = require('../models');
-
 class RequestService {
   requestRepository = new RequestRepository(service_request);
   
@@ -11,6 +10,7 @@ class RequestService {
     
     return true;
   }
+  
 }
 
 module.exports = RequestService;
