@@ -124,7 +124,7 @@ reserve_btn.addEventListener('click', () => {
         }
       ).then((response) => {
         console.log(response);
-        // window.location.reload();
+        window.location.reload();
       }).catch((error) => {
         alert('??????????????????');
         alert(error.request.response);
